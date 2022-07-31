@@ -9,14 +9,14 @@ function Main() {
     console.log(comment);
   };
 
-  const LiComment = (props) => {
-    return <li>{props.comment}</li>;
+  const LiComment = () => {
+    return <li>{comment}</li>;
   };
 
-  const UploadLi = (event) => {
+  /* const UploadLi = (event) => {
     event.preventDefault();
     return <LiComment />;
-  };
+  }; */
   return (
     <div className="wrap">
       <nav className="nav-bar">
@@ -90,7 +90,7 @@ function Main() {
               </div>
               <div className="article-comment">
                 <ul id="comment-list">
-                  <UploadLi />
+                  <LiComment />
                 </ul>
                 <div className="comment-input-wrap">
                   <form action="#" method="get">
@@ -101,7 +101,7 @@ function Main() {
                       onChange={handleComment}
                       placeholder="댓글달기"
                     />
-                    <button type="submit" id="upload-button" onClick={UploadLi}>
+                    <button type="submit" id="upload-button">
                       게시
                     </button>
                   </form>
