@@ -12,6 +12,7 @@ function Main() {
   const LiComment = () => {
     return <li>{comment}</li>;
   };
+  /*값 복사 해서 다른 useState에 저장하고 props문법으로 map돌려보자*/
 
   /* const UploadLi = (event) => {
     event.preventDefault();
