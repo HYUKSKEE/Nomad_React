@@ -1,4 +1,4 @@
-@import url("./reset.css");
+@import url("../reset.css");
 
 .wrap {
   width: 100%;
@@ -88,6 +88,7 @@
 .main-other-story ul {
   display: flex;
   text-align: center;
+  justify-content: space-evenly;
 }
 
 .main-other-story img {

@@ -58,7 +58,7 @@
   cursor: pointer;
 }
 
-.loginDiv a {
+.loginDiv .pwLink {
   display: block;
   margin: 100px 0px 50px 0px;
   font-family: "Noto Sans KR", sans-serif;
