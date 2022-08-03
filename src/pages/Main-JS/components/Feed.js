@@ -1,5 +1,6 @@
 import { useState } from "react";
 import LikeBtn from "./LikeBtn";
+import "./Feed.scss";
 
 function Feed(props) {
   const [comments, setComment] = useState([]);
@@ -39,14 +40,34 @@ function Feed(props) {
           <i className="fas fa-thin fa-ellipsis"></i>
         </div>
         <div className="article-content">
-          <img src="img/야나두.gif" alt="This is article" />
+          <img
+            className="article-main-img"
+            src="img/야나두.gif"
+            alt="This is article"
+          />
           <div className="article-btn-img">
             <div className="left-side">
-              <img src="img/heart.png" alt="This is heart icon" />
-              <img src="img/chat.png" alt="This is comment icon" />
-              <img src="img/export.png" alt="This is share icon" />
+              <img
+                className="btn-img"
+                src="img/heart.png"
+                alt="This is heart icon"
+              />
+              <img
+                className="btn-img"
+                src="img/chat.png"
+                alt="This is comment icon"
+              />
+              <img
+                className="btn-img"
+                src="img/export.png"
+                alt="This is share icon"
+              />
             </div>
-            <img src="img/tag.png" alt="This is book mark icon" />
+            <img
+              className="btn-img"
+              src="img/tag.png"
+              alt="This is book mark icon"
+            />
           </div>
         </div>
         <div className="article-comment">

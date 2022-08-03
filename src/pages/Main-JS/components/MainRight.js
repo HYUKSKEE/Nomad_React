@@ -1,5 +1,6 @@
-import Story from "./Story";
 import imgRender from "./Img";
+import MainRightStory from "./MainRightStory";
+import "./MainRight.scss";
 
 function MainRight(props) {
   return (
@@ -16,11 +17,11 @@ function MainRight(props) {
             <p>{props.title}'S account</p>
           </div>
         </div>
-        <div className="story">
-          <Story onEvent={imgRender(url)} />
+        <div className="Right-story">
+          <MainRightStory onEvent={imgRender(url)} />
         </div>
         <div className="recommend-story">
-          <Story onEvent={imgRender(url)} />
+          <MainRightStory onEvent={imgRender(url)} />
         </div>
       </div>
     </div>
