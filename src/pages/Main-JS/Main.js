@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import Story from "./Story";
-import Nav from "./Nav";
-import Feed from "./Feed";
-import MainRight from "./MainRight";
-import imgRender from "./Img";
-import "./main.css";
+import React from "react";
+import Story from "./components/Story";
+import Nav from "../../components/Nav/Nav";
+import Feed from "./components/Feed";
+import MainRight from "./components/MainRight";
+import imgRender from "./components/Img";
+import "./main.scss";
 
 function Main() {
-  imgRender(url);
   return (
     <div className="wrap">
       <Nav title="westargram" />

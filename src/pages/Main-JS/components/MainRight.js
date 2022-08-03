@@ -2,7 +2,6 @@ import Story from "./Story";
 import imgRender from "./Img";
 
 function MainRight(props) {
-  let lis = props.onEvent;
   return (
     <div className="main-right-wrap">
       <div className="main-right">

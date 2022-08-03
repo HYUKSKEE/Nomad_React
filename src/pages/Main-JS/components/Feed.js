@@ -1,10 +1,10 @@
 import { useState } from "react";
+import LikeBtn from "./LikeBtn";
 
 function Feed(props) {
   const [comments, setComment] = useState([]);
   const [input, setInput] = useState("");
   const [users, setUsers] = useState(["Wecode Bootcamp "]);
-  const [like, setLike] = useState(false);
 
   const handleComment = (event) => {
     setInput(event.target.value);
@@ -18,30 +18,35 @@ function Feed(props) {
     setInput("");
   };
 
+  const disableUpload = (event) => {
+    event.preventDefault();
+  };
+
   const deleteLi = (event) => {
     const div = event.target.parentElement;
     const li = div.parentElement;
     li.remove();
   };
+
   return (
     <div className="feed">
       <article>
         <div className="article-head">
           <h2>
-            <img src="img/운명 트로트 2.jpg" alt="profile image" />
+            <img src="img/운명 트로트 2.jpg" alt={"This is profile"} />
             <p>HYUKSKEE</p>
           </h2>
           <i className="fas fa-thin fa-ellipsis"></i>
         </div>
         <div className="article-content">
-          <img src="img/야나두.gif" alt="article image" />
+          <img src="img/야나두.gif" alt="This is article" />
           <div className="article-btn-img">
             <div className="left-side">
-              <img src="img/heart.png" alt="heart iamge" />
-              <img src="img/chat.png" alt="comment iamge" />
-              <img src="img/export.png" alt="share iamge" />
+              <img src="img/heart.png" alt="This is heart icon" />
+              <img src="img/chat.png" alt="This is comment icon" />
+              <img src="img/export.png" alt="This is share icon" />
             </div>
-            <img src="img/tag.png" alt="book mark image" />
+            <img src="img/tag.png" alt="This is book mark icon" />
           </div>
         </div>
         <div className="article-comment">
@@ -50,22 +55,14 @@ function Feed(props) {
               return (
                 <li id={idx} key={idx} className="new-li">
                   <span>
-                    {users}
+                    <strong>{users}</strong>
                     {comment}
                   </span>
                   <div>
                     <button id="delete-button" onClick={deleteLi}>
                       X
                     </button>
-                    <button
-                      id={`like${idx}`}
-                      className="like-button"
-                      onClick={() => {
-                        setLike(!like);
-                      }}
-                    >
-                      {like == true ? "🧡" : "🤍"}
-                    </button>
+                    <LikeBtn />
                   </div>
                 </li>
               );
@@ -80,7 +77,11 @@ function Feed(props) {
                 onChange={handleComment}
                 placeholder="댓글달기"
               />
-              <button type="submit" id="upload-button" onClick={handleUpload}>
+              <button
+                type="submit"
+                id="upload-button"
+                onClick={input !== "" ? handleUpload : disableUpload}
+              >
                 게시
               </button>
             </form>

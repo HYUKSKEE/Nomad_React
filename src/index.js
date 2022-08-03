@@ -2,10 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import Login from "./LoginJS/Login";
-import Main from "./MainJS/Main";
 import Router from "./Router";
-import "./reset.css";
+import "./styles/reset.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Router />);

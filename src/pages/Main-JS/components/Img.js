@@ -4,7 +4,7 @@ function imgRender(url) {
     let s = url[i];
     lis.push(
       <li key={s.src}>
-        <img src={s.src} />
+        <img src={s.src} alt="This is story bar" />
         {s.name}
       </li>
     );

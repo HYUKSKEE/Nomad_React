@@ -1,8 +1,9 @@
-import React, { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import "./Login.css";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Login.scss";
 
 function Login() {
+  const navigate = useNavigate();
   const [account, setAccount] = useState({
     email: "",
     password: "",
@@ -14,6 +15,10 @@ function Login() {
       [target.name]: target.value,
     });
   }
+
+  const linkHandle = () => {
+    navigate(`./Main`, { replace: true });
+  };
 
   const isValidate =
     account.email.includes("@") && account.password.length >= 5;
@@ -37,29 +42,26 @@ function Login() {
             value={account.password}
             onChange={handleInput}
           />
-          {isValidate && (
-            <Link to="./Main">
-              <button
-                type="submit"
-                id="login-button"
-                className="submitButton validated "
-              >
+          {!isValidate ? (
+            <Link to="/">
+              <button id="login-button" className="submitButton">
                 로그인
               </button>
             </Link>
+          ) : (
+            <button
+              type="button"
+              id="login-button"
+              className="submitButton validated"
+              onClick={linkHandle}
+            >
+              로그인
+            </button>
           )}
-          <button
-            to="./Main"
-            type="submit"
-            id="login-button"
-            className={`submitButton ${isValidate && "validated"}`}
-          >
-            <Link to="./Main">로그인</Link>
-          </button>
         </form>
-        <a className="pwLink" href="#">
+        <Link to={"/"} className="pwLink">
           비밀번호를 잊으셨나요?
-        </a>
+        </Link>
       </main>
     </div>
   );

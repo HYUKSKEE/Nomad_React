@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 function Nav(props) {
   return (
     <nav className="nav-bar">
       <div className="nav-h1">
         <h1>
-          <a href="#">
+          <Link to="/Main">
             <i className="fa-brands fa-instagram"></i>
             {props.title}
-          </a>
+          </Link>
         </h1>
       </div>
       <div className="nav-search">
@@ -15,13 +17,13 @@ function Nav(props) {
       </div>
       <div className="nav-icons">
         <i className="fas fa-thin fa-compass">
-          <a href="#"></a>
+          <Link to="/Main"></Link>
         </i>
         <i className="fas fa-thin fa-heart">
-          <a href="#"></a>
+          <Link to="/Main"></Link>
         </i>
         <i className="fas fa-light fa-user">
-          <a href="#"></a>
+          <Link to="/Main"></Link>
         </i>
       </div>
     </nav>
