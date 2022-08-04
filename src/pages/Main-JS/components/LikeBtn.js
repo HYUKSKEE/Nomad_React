@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./LikeBtn.scss";
 
 function LikeBtn() {
   const [a, setA] = useState(true);

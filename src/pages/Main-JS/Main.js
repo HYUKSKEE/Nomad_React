@@ -3,7 +3,7 @@ import Story from "./components/Story";
 import Nav from "../../components/Nav/Nav";
 import Feed from "./components/Feed";
 import MainRight from "./components/MainRight";
-import imgRender from "./components/Img";
+import imgRender from "./components/imgRender";
 import "./main.scss";
 
 function Main() {

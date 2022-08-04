@@ -2,7 +2,7 @@ function MainRightStory(props) {
   let lis = props.onEvent;
   return (
     <>
-      <div className="Main-Right-story">
+      <div className={props.className}>
         <ul>{lis}</ul>
       </div>
     </>
